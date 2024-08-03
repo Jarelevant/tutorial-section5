@@ -28,10 +28,11 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dist-file
-          path: |
-            dist
-            package.json
+         name: my-artifact
+         path: |
+          path/output/bin/
+          path/output/test-results
+          !path/**/*.tmp
   deploy:
     needs: build
     runs-on: ubuntu-latest
